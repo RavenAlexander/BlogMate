@@ -24,10 +24,14 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 
 ## API Routes
 / - Home
+
 /add-post - Create
+
 /post:id - Read
+
 /edit-post:id - Update
+
 /delete-post:id - Delete
 
 ## Blockers
-I did create the data for the comments and the users database (Comment.js and User.js), but I ran out of time to implement them on the client-side for interaction. I plan to add those routes soon.
+I did create the schemas and data entries for the comments and the users database collections ( `models/Comment.js`, `models/User.js` and `routes/main.js`), but I ran out of time to implement them on the client-side for interaction. I plan to add those routes soon.
