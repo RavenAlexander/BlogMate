@@ -1,6 +1,6 @@
 # SBA-MongoDB
 
-This project is a blog built with NodeJS and Express using a MongoDB database. The blog posts are part of a database collection that can be added to, edited, deleted from, etc.
+This project is a blog built with NodeJS and Express using a MongoDB database. The blog posts are part of a database collection that can be added to, edited, deleted from, etc. There is a Posts collection, a Users collection, a Comments collection and a Sessions collection within the database.
 
 ## Objectives 
 - Create a server application with Node, Express, and MongoDB.
@@ -21,3 +21,13 @@ Run `nodemon app.js` to start the server and view page in browser.
 
 ## Important:
 You MUST register/login to access the dashboard for testing. I recommend creating a very simple username and password to test the functionality. If you forget your password, I can't help you. ;D
+
+## API Routes
+/ - Home
+/add-post - Create
+/post:id - Read
+/edit-post:id - Update
+/delete-post:id - Delete
+
+## Blockers
+I did create the data for the comments and the users database (Comment.js and User.js), but I ran out of time to implement them on the client-side for interaction. I plan to add those routes soon.

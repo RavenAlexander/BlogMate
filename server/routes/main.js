@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/Post')
+const Post = require('../models/Post');
+const User = require('../models/User');
+const Comment = require('../models/Comment');
 
 //Routes
 // GET / HOME 
@@ -61,7 +63,8 @@ router.post('/search', async (req, res) => {
     try {
     const locals = {
         title: "Search",
-        description: ""
+        description: "",
+        
     }
         let searchTerm = req.body.searchTerm;
         const searchNoSpecialChar = searchTerm.replace(/[^a-zA-Z0-9]/g, "") //regex
@@ -73,7 +76,7 @@ router.post('/search', async (req, res) => {
                 {body: {$regex: new RegExp(searchNoSpecialChar, 'i')}}
             ]
         });
-        res.render('search_results', { data, locals});
+        res.render('search_results', { data, locals, currentRoute: '/search'});
     } catch (error) {
         console.log(error);
     }
@@ -89,7 +92,7 @@ router.get('/about', (req, res) => {
 
 module.exports = router;
 
-//NOTE: This code adds sample blog posts to the database but I commented it out because the ones that are already in there are enough. If you were to leave this running, it would add new blog posts every time you refresh the page.
+//NOTE: This code adds sample data to the database but I commented it out because the ones that are already in there are enough. If you were to leave this running, it would add new items every time you refresh the page.
 // function insertPostData () {
 //     Post.insertMany([
 //         {
@@ -107,3 +110,39 @@ module.exports = router;
 //     ])
 // }
 // insertPostData();
+
+// function insertUserData () {
+//     User.insertMany([
+//         {
+//             username: "userG",
+//             password: "pass"
+//         },
+//         {
+//             username: "userH",
+//             password: "pass"
+//         },
+//         {
+//             username: "userI",
+//             password: "pass"
+//         }
+//     ])
+// }
+// insertUserData();
+
+// function insertCommentData () {
+//     Comment.insertMany([
+//         {
+//             username: "Anon",
+//             body: "Goodnight."
+//         },
+//         {
+//             username: "Anon",
+//             body: "Good morning"
+//         },
+//         {
+//             username: "Anon",
+//             body: "Good afternoon"
+//         },
+//     ])
+// }
+// insertCommentData();
