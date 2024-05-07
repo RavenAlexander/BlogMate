@@ -13,7 +13,7 @@ const authMiddleware = (req, res, next) => {
     const token = req.cookies.token;
 
     if(!token) {
-        return res.status(401).json({message: 'Unauthorized'});
+        return res.status(401).json({message: 'Unauthorized: User must log in to proceed'});
     }
 
     try {
@@ -24,6 +24,7 @@ const authMiddleware = (req, res, next) => {
         res.status(401).json({message: 'Unauthorized'});
     }
 }
+
 
 //Routes
 // GET / Admin - Login Page
@@ -136,6 +137,68 @@ router.post('/add-post', authMiddleware, async (req, res) => {
 
 });
 
+//GET / Admin - Edit Post
+router.get('/edit-post/:id', authMiddleware, async (req, res) => {
+    try {
+        const locals = {
+            title: 'Edit Post',
+            description: 'Free NodeJS User Management System'
+        }
+
+        const data = await Post.findOne({_id: req.params.id});
+
+        res.render('admin/edit-post', {
+            locals,
+            data,
+            layout: adminLayout
+        });
+       
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
+//PUT / Admin - Update Post
+router.put('/edit-post/:id', authMiddleware, async (req, res) => {
+    try {
+        await Post.findByIdAndUpdate(req.params.id, {
+            title: req.body.title,
+            body: req.body.body,
+            updatedAt: Date.now()
+        });
+
+        res.redirect(`/edit-post/${req.params.id}`);
+       
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
+
+//DELETE / Admin - Delete Post (from Edit Post)
+router.delete('/edit-post/:id', authMiddleware, async (req, res) => {
+
+    try {
+        await Post.deleteOne( {_id: req.params.id});
+        res.redirect('/dashboard');
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+//DELETE / Admin - Delete Post (from Dashboard)
+router.delete('/delete-post/:id', authMiddleware, async (req, res) => {
+    try {
+        await Post.deleteOne( {_id: req.params.id});
+        res.redirect('/dashboard');
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+
 //Routes
 // POST / Admin - Register
 router.post('/register', async (req, res) => {
@@ -159,5 +222,10 @@ router.post('/register', async (req, res) => {
 
 });
 
+//GET / Admin Logout
+router.get('/logout', (req, res) => {
+    res.clearCookie('token');
+    res.redirect('/');
+});
 
 module.exports = router;
