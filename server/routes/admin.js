@@ -9,6 +9,7 @@ const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
 
 //Middleware -Check Login (This is a guard to make sure the user is logged in successfully)
+// IMPORTANT: You must register/login to access the dashboard for testing. I recommend creating a very simple username and password to test the functionality. If you forget your password, I can't help you.
 const authMiddleware = (req, res, next) => {
     const token = req.cookies.token;
 
@@ -26,7 +27,7 @@ const authMiddleware = (req, res, next) => {
 }
 
 
-//Routes
+//CRUD Routes
 // GET / Admin - Login Page
 router.get('/admin', async (req, res) => {
     try {

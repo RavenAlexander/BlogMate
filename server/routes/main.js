@@ -7,7 +7,7 @@ const Post = require('../models/Post')
 router.get('', async (req, res) => {
     try {
     const locals = {
-        title: "NodeJS Blog",
+        title: "BlogMate",
         description: "Simple blog created with NodeJS, Express and MongoDB."
     }
        
@@ -50,7 +50,7 @@ router.get('/post/:id', async (req, res) => {
             description: '',
             currentRoute: `/post/${slug}`
         }
-        res.render('post', {locals, data});
+        res.render('post', {locals, data, currentRoute: `/post/${slug}`});
     } catch (error) {
         console.log(error);
     }
@@ -89,6 +89,7 @@ router.get('/about', (req, res) => {
 
 module.exports = router;
 
+//NOTE: This code adds sample blog posts to the database but I commented it out because the ones that are already in there are enough. If you were to leave this running, it would add new blog posts every time you refresh the page.
 // function insertPostData () {
 //     Post.insertMany([
 //         {
