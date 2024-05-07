@@ -70,7 +70,7 @@ router.post('/search', async (req, res) => {
         const searchNoSpecialChar = searchTerm.replace(/[^a-zA-Z0-9]/g, "") //regex
 
         const data = await Post.find({
-            //Mongoose
+            //Validation using query operators
             $or: [
                 {title: {$regex: new RegExp(searchNoSpecialChar, 'i')}},
                 {body: {$regex: new RegExp(searchNoSpecialChar, 'i')}}

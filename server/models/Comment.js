@@ -5,7 +5,7 @@ const CommentSchema = new Schema({
     
     username: {
         type: String,
-        required: true,
+        required: true, //Validation
         unique: false
     },
     body: {
