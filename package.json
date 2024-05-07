@@ -12,10 +12,10 @@
     "method-override": "^3.0.0",
     "mongoose": "^8.3.2"
   },
-  "name": "sba-expressserver",
+  "name": "sba-mongodb",
   "description": "",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
