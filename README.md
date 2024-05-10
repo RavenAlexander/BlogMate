@@ -42,4 +42,4 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 
 
 ## Note:
-There isn't any client-side interaction with /users page because the interaction for that database is located within the Registration page (/admin). When you register, you are adding new details to the User database. Also, /users is also not a clickable link within the blog, it's more of a "secret page" just so you can view the api data.
+There isn't any client-side interaction with /users page because the interaction for that database is located within the Registration page (/admin). When you register, you are adding new details to the User database. Also, /users is also not a clickable link within the blog, it's more of a "secret page" just so you can view the api data for demonstrational purposes.
