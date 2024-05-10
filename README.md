@@ -15,7 +15,7 @@ HTML, CSS, JS, NodeJS, Express, Mongoose, MongoDB, EJS (view engine)
 
 ## Installation
 To run this app, you must install these dependencies:
-`npm i bcrypt connect-mongo cookie-parser dotenv ejs express express-ejs-layouts express-session jsonwebtoken method-override mongoose `
+`npm i bcrypt connect-mongo cookie-parser dotenv ejs express express-ejs-layouts express-session jsonwebtoken method-override mongoose body-parser`
 
 Run `nodemon app.js` to start the server and view page in browser.
 
@@ -25,7 +25,7 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 ## API Routes
 / - Home
 
-/add-post - Create
+/add-post - Create (Post)
 
 /post:id - Read
 
@@ -33,5 +33,13 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 
 /delete-post:id - Delete
 
-## Blockers
-I did create the schemas and data entries for the comments and the users database collections ( `models/Comment.js`, `models/User.js` and `routes/main.js`), but I ran out of time to implement them on the client-side for interaction. I plan to add those routes soon.
+/users - Read (User)
+
+/admin - Create (User)
+
+/add-comment - Read / Create (Comment)
+
+
+
+## Note:
+There isn't any client-side interaction with /users page because the interaction for that database is located within the Registration page (/admin). When you register, you are adding new details to the User database. Also, /users is also not a clickable link within the blog, it's more of a "secret page" just so you can view the api data.

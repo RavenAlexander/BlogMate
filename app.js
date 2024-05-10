@@ -6,6 +6,8 @@ const methodOverride = require('method-override'); // Lets you use PUT or DELETE
 const cookieParser = require('cookie-parser'); //saves session 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const bodyParser = require('body-parser');
+
 
 const connectDB = require('./server/config/db');
 const {isActiveRoute} = require('./server/helpers/routeHelpers');
@@ -21,6 +23,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json()); //allows us to pass data through forms
 app.use(cookieParser());
 app.use(methodOverride('_method'));
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); 
+
 
 app.use(session({
     secret: 'keyboard cat',

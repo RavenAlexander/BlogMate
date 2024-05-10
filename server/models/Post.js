@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const PostSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true // Validation
     },
     body: {
         type: String,

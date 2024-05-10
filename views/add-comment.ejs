@@ -1,0 +1,14 @@
+
+<!-- It doesn't look how I wanted it to, but it DOES work. -->
+
+<h3>Comments: </h3>
+        <p><%= commentData %></p>
+          
+
+<form action="/add-comment/<%= commentData._id %>?_method=POST" method="POST">
+
+    <label for="body"><b>Leave a Comment:</b></label>
+    <textarea name="body"><%= newComment.body %></textarea>
+
+    <input type="submit" value="Add Comment" class="btn">
+</form>

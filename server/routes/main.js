@@ -3,6 +3,10 @@ const router = express.Router();
 const Post = require('../models/Post');
 const User = require('../models/User');
 const Comment = require('../models/Comment');
+var bodyParser = require("body-parser");
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 // GET / HOME 
@@ -83,11 +87,73 @@ router.post('/search', async (req, res) => {
 })
 
 
-
+//GET / ABOUT PAGE
 router.get('/about', (req, res) => {
     res.render('about', {
         currentRoute: '/about'
     });
+});
+
+//GET / COMMENT WALL (This allows you to view the entries of the Comments database)
+router.get('/add-comment', async (req, res) => {
+    try {
+        const commentData = await Comment.find( {},
+        {username: 1, body: 1, contribs: 1, _id: 0});
+    //console.log(commentData);
+   
+
+        const newComment = new Comment({
+            username: req.body.username,
+            body: req.body.body
+        });
+
+        res.render('add-comment', {
+            commentData,
+             newComment,
+            currentRoute: '/add-comment'
+            
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
+//POST / ADD COMMENT
+router.post('/add-comment', async (req, res) => {
+    try {
+        
+        try {
+            
+             const newComment = new Comment({
+                body: req.body.body
+            });  
+            await Comment.create(newComment);
+
+        } catch (error) {
+            console.log(error);
+        }
+
+        res.redirect('/add-comment');
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
+//GET / API - Users List (This allows you to view the entries of the User database. Typically I wouldn't include this data to be exposed to the public but this is for demonstration)
+router.get('/users', async (req, res) => {
+    try {
+        
+        const data = await User.find();
+        res.render('users', {
+           data,
+           currentRoute: '/users'
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
 });
 
 module.exports = router;
