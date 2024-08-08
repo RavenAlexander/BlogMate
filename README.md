@@ -1,6 +1,8 @@
-# SBA-MongoDB
+# BlogMate Web Blog
 
-This project is a blog built with NodeJS and Express using a MongoDB database. The blog posts are part of a database collection that can be added to, edited, deleted from, etc. There is a Posts collection, a Users collection, a Comments collection and a Sessions collection within the database.
+This project is a fullstack web page built with NodeJS and Express using a MongoDB database. The blog posts are part of a database collection that can be added to, edited, deleted from, etc. There is a Posts collection, a Users collection, a Comments collection and a Sessions collection within the database.
+
+Live (deployed) Site: https://sba-mongodb-1.onrender.com/
 
 ## Objectives 
 - Create a server application with Node, Express, and MongoDB.
@@ -14,10 +16,10 @@ This project is a blog built with NodeJS and Express using a MongoDB database. T
 HTML, CSS, JS, NodeJS, Express, Mongoose, MongoDB, EJS (view engine)
 
 ## Installation
-To run this app, you must install these dependencies:
+To run this app locally, you must install these dependencies:
 `npm i bcrypt connect-mongo cookie-parser dotenv ejs express express-ejs-layouts express-session jsonwebtoken method-override mongoose body-parser`
 
-Run `nodemon app.js` to start the server and view page in browser.
+Run `node app.js` to start the server and view page in browser.
 
 ## Important:
 You MUST register/login to access the dashboard for testing. I recommend creating a very simple username and password to test the functionality. If you forget your password, I can't help you. ;D
