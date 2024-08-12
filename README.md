@@ -19,8 +19,6 @@ The primary goal of this project was to enhance understanding and proficiency in
 4. **Responsive Website** - Utilize media-queries to create visually appealing and user-friendly interactions.
 
 ![](./presentation/dualblog2.png)
-<img src="./presentation/blogpost.png" width="65%" height="65%">
-
 ## Languages and Technologies Used
 - HTML
 - CSS
@@ -76,6 +74,7 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 1. **View Engines**: Using Express view engines was a new territory for me, and took a bit of a learning curve to get EJS right. But once I got the hang of it, it became easier!
 2. **User Profile Creation**: I adapted a seamless profile creation for users as well as middleware to check if a user is logged in or not. This ensures all necessary information is captured and easily manageable.
 
+<img src="./presentation/blogpost.png" width="65%" height="65%">
 ## Future Goals
 
 As of right now it is not possible to add additional images to a blog post from the client-side. I would love to be able to implement that in the future.
