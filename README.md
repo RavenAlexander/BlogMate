@@ -40,6 +40,7 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 | Admin Login | Admin Dashboard |
 | ------------- | ------------- |
 | ![](./presentation/blogadmin.png) | ![](./presentation/blogadminposts.png) |
+
 | Add New Post | Edit Post |
 | ------------- | ------------- |
 | ![](./presentation/blogaddnew.png) | ![](./presentation/blogeditpost.png) |
