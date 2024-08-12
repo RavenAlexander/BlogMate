@@ -7,10 +7,10 @@ Live (deployed) Site: [BlogMate](https://sba-mongodb-1.onrender.com/)
 ## Project Objectives 
 The primary goal of this project was to enhance understanding and proficiency in several key areas of web development:
 
-**NodeJS Proficiency** - Create a server application with Node, Express, and MongoDB.
-**CRUD API Creation** - Create a CRUD API using Express and MongoDB.
-**MongoDB Indexing** - Create MongoDB indexes and use indexing to make efficient queries.
-**MongoDB Validation** - Create MongoDB validation rules and use validation to ensure data consistency.
+- **NodeJS Proficiency** - Create a server application with Node, Express, and MongoDB.
+- **CRUD API Creation** - Create a CRUD API using Express and MongoDB.
+- **MongoDB Indexing** - Create MongoDB indexes and use indexing to make efficient queries.
+- **MongoDB Validation** - Create MongoDB validation rules and use validation to ensure data consistency.
 
 ## Features
 1. **Search Bar** - Search functionality is made possible to be able to find keywords within blog posts.
@@ -19,17 +19,17 @@ The primary goal of this project was to enhance understanding and proficiency in
 4. **Responsive Website** - Utilize media-queries to create visually appealing and user-friendly interactions.
 
 ![](./presentation/dualblog2.png)
-<img src="./presentation/blogpost.png" width="75%" height="75%">
+<img src="./presentation/blogpost.png" width="65%" height="65%">
 
 ## Languages and Technologies Used
--HTML
--CSS
--JS
--NodeJS
--Express
--Mongoose
--MongoDB
--EJS (view engine)
+- HTML
+- CSS
+- JS
+- NodeJS
+- Express
+- Mongoose
+- MongoDB
+- EJS (view engine)
 
 ## Installation
 To run this app locally, you must install these dependencies:
@@ -70,11 +70,12 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 - **Endpoint:**  **`DELETE /delete-post:id`**
 - **Description:** Allows you to delete a specific post by id number.
 
+
 ## Challenges Addressed
 
 1. **View Engines**: Using Express view engines was a new territory for me, and took a bit of a learning curve to get EJS right. But once I got the hang of it, it became easier!
 2. **User Profile Creation**: I adapted a seamless profile creation for users as well as middleware to check if a user is logged in or not. This ensures all necessary information is captured and easily manageable.
 
-### Future Goals
+## Future Goals
 
 As of right now it is not possible to add additional images to a blog post from the client-side. I would love to be able to implement that in the future.
