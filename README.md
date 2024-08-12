@@ -17,7 +17,6 @@ The primary goal of this project was to enhance understanding and proficiency in
 2. **Admin Dashboard** - Dashboard allows you to create, edit and delete blog posts from the database.
 3. **User Authentication** - Implemented JWT Authentication with BCrypt to ensure secure and reliable user login and registration processes.
 4. **Responsive Website** - Utilize media-queries to create visually appealing and user-friendly interactions.
-
 ![](./presentation/dualblog2.png)
 ## Languages and Technologies Used
 - HTML
@@ -42,6 +41,7 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 | ------------- | ------------- |
 | ![](./presentation/blogadmin.png) | ![](./presentation/blogadminposts.png) |
 | Add New Post | Edit Post |
+| ------------- | ------------- |
 | ![](./presentation/blogaddnew.png) | ![](./presentation/blogeditpost.png) |
 
 ## API Route Examples
@@ -75,6 +75,7 @@ You MUST register/login to access the dashboard for testing. I recommend creatin
 2. **User Profile Creation**: I adapted a seamless profile creation for users as well as middleware to check if a user is logged in or not. This ensures all necessary information is captured and easily manageable.
 
 <img src="./presentation/blogpost.png" width="65%" height="65%">
+
 ## Future Goals
 
 As of right now it is not possible to add additional images to a blog post from the client-side. I would love to be able to implement that in the future.
